@@ -7,15 +7,17 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <HomeRoute />,
-    errorElement: <h2>No se encontró la página amigo.</h2>
+    errorElement: <h2>No se encontró la página amigo.</h2>,
+    children: [
+      {
+        path: 'contacts/:contactId',
+        element: <ContactRoute />
+      }
+    ]
   },
   {
     path: '/about',
     element: <AboutRoute />
-  },
-  {
-    path: '/contact',
-    element: <ContactRoute />
   }
 ]);
 
