@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import Error from './components/Error';
 import AboutRoute from './routes/AboutRoute';
 import ContactRoute from './routes/ContactRoute';
 import HomeRoute from './routes/HomeRoute';
@@ -7,7 +8,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <HomeRoute />,
-    errorElement: <h2>No se encontró la página amigo.</h2>,
+    errorElement: <Error />,
     children: [
       {
         path: 'contacts/:contactId',
