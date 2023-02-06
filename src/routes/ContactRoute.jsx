@@ -7,6 +7,10 @@ const ContactRoute = () => {
 
   const contact = useMemo(() => getContactById(params.contactId), [params.contactId]);
 
+  if (!contact) {
+    throw new Error('El contacto no existe');
+  }
+
   return (
     <div>
       <label>name: {contact.name}</label>
