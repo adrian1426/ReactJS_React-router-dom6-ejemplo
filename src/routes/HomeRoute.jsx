@@ -1,5 +1,6 @@
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import Menu from "../components/Menu";
+import { items } from '../data/items';
 
 const HomeRoute = () => {
   return (
@@ -12,6 +13,15 @@ const HomeRoute = () => {
       <hr />
 
       <div>
+        <div>
+          {
+            items.map((item) => (
+              <div key={item.id}>
+                <Link to={`/contacts/${item.id}`}>{item.name}</Link>
+              </div>
+            ))
+          }
+        </div>
         <Outlet />
       </div>
     </div>
